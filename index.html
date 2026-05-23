@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Sriraman - Robotics & AI Engineer</title>
+    <title>AS</title>
     <style>
         * {
             margin: 0;
@@ -44,7 +44,7 @@
             color: #666;
             font-weight: 400;
             letter-spacing: 0.5px;
-            margin-bottom: 30px;
+            margin-bottom: 12px;
         }
 
         .bio {
@@ -132,74 +132,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            cursor: pointer;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -30px;
-            right: 0;
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .modal-close:hover {
-            color: #ccc;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 70vh;
-            object-fit: contain;
-        }
-
-        .modal-caption {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #fff;
-            margin-top: 16px;
-            text-align: center;
-            max-width: 600px;
-        }
-
-        @media (max-width: 600px) {
+@media (max-width: 600px) {
             .container {
                 padding: 60px 24px;
             }
@@ -223,20 +158,20 @@
         <div class="header">
             <img src="images/profile.jpg" alt="Abhishek Sriraman" class="profile-image">
             <h1>Abhishek Sriraman</h1>
-            <div class="title">Robotics and ML Specialist</div>
+            <div class="title">Robotics & ML Engineer</div>
         </div>
 
         <div class="bio">
-            <p>My expertise is in developing and deploying intelligent robotic systems, and have done so in a number of different domains through early stage startups: <a href="https://www.neocis.com/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">Neocis Inc</a>, Vicarious AI, and <a href="https://www.intrinsic.ai/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">Intrinsic AI (Google)</a>. Specialties include reactive control, haptics, and behavior modeling.</p>
+            <p>My expertise is in developing and deploying intelligent robotic systems. I have done so in a number of different domains through early stage startups: <a href="https://www.neocis.com/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">Neocis Inc</a>, Vicarious AI, and <a href="https://www.intrinsic.ai/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">Intrinsic AI (Google)</a>. Specialties include reactive control, haptics, and behavior modeling.</p>
             <div class="carousel">
                 <div class="carousel-item">
-                    <img src="images/neocis.jpg" alt="Neocis Inc" class="carousel-img" data-caption="A robotic surgical assistant for dental implant procedures. Technical challenges include passive tracking for patient localization, 3D surgical planning, and haptic control of robot motions.">
+                    <img src="images/neocis.jpg" alt="Neocis Inc">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/vicarious.png" alt="Vicarious AI" class="carousel-img" data-caption="A fleet of robots working on packing boxes in an industrial fulfillment center. Technical challenges include grasping from cluttered bins, manipulating deformable objects, oriented placement, and maximizing cycle time.">
+                    <img src="images/vicarious.png" alt="Vicarious AI">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/intinsic.jpg" alt="Intrinsic AI" class="carousel-img" data-caption="A multi-step machine tending applications. Technical challenges include task-and-motion planning solved at runtime with a simple HMI, production-grade calibration, and verification procedures.">
+                    <img src="images/intinsic.jpg" alt="Intrinsic AI">
                 </div>
             </div>
             <p>I am currently pursuing a PhD at the University of Sheffield, working with <a href="http://robert-loftin.net/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">Robert Loftin</a> on multi-agent reinforcement learning and ad-hoc teamwork.</p>
@@ -249,48 +184,9 @@
         </div>
 
         <div class="contact-section">
-            <a href="mailto:abhisheksriraman@gmail.com" class="email-link">abhisheksriraman@gmail.com</a>
+            <a href="mailto:abhisheksriraman@gmail.com" class="email-link">(first name)(last name)@gmail.com</a>
         </div>
     </div>
 
-    <div class="modal" id="imageModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <img id="modalImage" src="" alt="" class="modal-image">
-            <div class="modal-caption" id="modalCaption"></div>
-        </div>
-    </div>
-
-    <script>
-        const carouselImages = document.querySelectorAll('.carousel-img');
-        const modal = document.getElementById('imageModal');
-
-        carouselImages.forEach(img => {
-            img.addEventListener('click', function() {
-                const caption = this.getAttribute('data-caption');
-                const src = this.getAttribute('src');
-
-                document.getElementById('modalImage').src = src;
-                document.getElementById('modalCaption').textContent = caption;
-                modal.classList.add('active');
-            });
-        });
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
 </body>
 </html>
